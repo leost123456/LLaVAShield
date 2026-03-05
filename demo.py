@@ -13,7 +13,7 @@ messages = [
     {
         'role': 'user',
         'content': [
-            {"type": "image", "image": './figs/cat.jpg'},
+            {"type": "image", "image": 'https://github.com/leost123456/LLaVAShield/blob/main/figs/cat.jpg?raw=true'},
             {"type": "text", "text": 'What kind of animal is this?'},
         ]
     },

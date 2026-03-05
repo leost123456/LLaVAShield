@@ -1,8 +1,8 @@
-import argparse
 import torch
-import os
 import io
 import json
+import requests
+import base64
 from PIL import Image
 
 from llava.constants import IMAGE_TOKEN_INDEX
@@ -81,20 +81,39 @@ class LlavaShieldProcessor:
         input_ids = tokenizer_image_token(prompt, self.tokenizer, IMAGE_TOKEN_INDEX, return_tensors="pt").unsqueeze(0).to(device)
 
         image_tensors = []
+        # 取出并处理每个样本的images
         for image_file in image_files:
-            if isinstance(image_file, str):
-                image = Image.open(image_file)
-            elif isinstance(image_file, Image.Image):
-                image = image_file
-            elif isinstance(image_file, (bytes, bytearray)):
-                image = Image.open(io.BytesIO(image_file))
-            else:
-                raise ValueError(f"Unsupported image type: {type(image_file)}")
+            image = None
+            try:
+                if isinstance(image_file, str):
+                    if image_file.startswith(('http://', 'https://')): 
+                        response = requests.get(image_file, stream=True, timeout=10)
+                        response.raise_for_status() 
+                        image = Image.open(response.raw)
+                    elif image_file.startswith('data:image'): 
+                        base64_data = image_file.split(',', 1)[1]
+                        image = Image.open(io.BytesIO(base64.b64decode(base64_data)))
+                    else:
+                        image = Image.open(image_file)
                 
-            image_tensor = self.image_processor.preprocess(image, return_tensors='pt')['pixel_values']
-            image_tensors.append(image_tensor.half().to(device))
-            
-        return {"input_ids": input_ids, "image_tensors": image_tensors}
+                elif isinstance(image_file, Image.Image): 
+                    image = image_file
+                    
+                elif isinstance(image_file, (bytes, bytearray)): 
+                    image = Image.open(io.BytesIO(image_file))
+                    
+                else:
+                    raise ValueError(f"Unsupported image input type: {type(image_file)}")
+
+                if image.mode != 'RGB':
+                    image = image.convert('RGB')
+
+                image_tensor = self.image_processor.preprocess(image, return_tensors='pt')['pixel_values']
+                image_tensors.append(image_tensor.half().to(device))
+                return {"input_ids": input_ids, "image_tensors": image_tensors}
+                
+            except Exception as e:
+                raise ValueError(f"Error processing image {image_file[:50]}... : {e}")
 
 class LlavaShieldModel:
     """
