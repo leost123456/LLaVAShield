@@ -49,7 +49,7 @@
               <img src="../figs/logo.png" alt="LLaVAShield" style="width: 48px; height: 48px; vertical-align: middle;" onerror="this.style.display='none'">
               LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models
             </h1>
-            <!-- Anthors -->
+            <!-- Authors -->
             <div class="is-size-5 publication-authors">
               <span class="author-block">Guolei Huang<sup>1,5,*,§</sup>,</span>
               <span class="author-block">Qinzhi Peng<sup>2,5,*,§</sup>,</span>
@@ -203,15 +203,31 @@
         <img src="static/images/table_4.jpg" alt="Results on external safety benchmarks" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
         <figcaption class="has-text-centered">Table 4: Results on external safety benchmarks. MM-SafetyBench is reported using Recall. All numbers are in %.</figcaption>
       </figure>
-      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> (1) We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. Results in Table 5 show consistently high Attack Success Rate (ASR), indicating substantial assistant-side vulnerability in this setting (2) Analysis of image content and dialogue turns shows that including images increases Average Score Gain (= 0.375) and that risk tends to rise as dialogues progress.</p>
-      <figure>
-        <img src="static/images/table_5.jpg" alt="ASR on the test set for different target models" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
-        <figcaption class="has-text-centered">ASR on the test set for different target models</figcaption>
-      </figure>
-      <figure>
-        <img src="static/images/figure_4.jpg" alt="Analysis of components" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
-        <figcaption class="has-text-centered">Analysis of components.</figcaption>
-      </figure>
+      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> (1) We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. Results in Table 5 show consistently high Attack Success Rate (ASR), underscoring that mainstream VLMs remain vulnerable to harmful inputs in multimodal multi-turn dialogues and supporting that the MMRT framework effectively explores attack paths that elicit unsafe responses. (2) Analysis of image content and dialogue turns shows that including images increases Average Score Gain (= 0.375) and that risk tends to rise as dialogues progress.</p>
+      <div class="columns is-variable is-5 is-multiline">
+        <div class="column is-half">
+          <figure>
+            <img src="static/images/table_5.jpg"
+                 alt="ASR on the test set for different target models"
+                 width="100%"
+                 style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <figcaption class="has-text-centered">
+              Table 5: ASR on the test set for different target models.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="column is-half">
+          <figure>
+            <img src="static/images/figure_4.jpg"
+                 alt="Analysis of components"
+                 width="100%"
+                 style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <figcaption class="has-text-centered">
+              Analysis of components.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
