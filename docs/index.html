@@ -49,24 +49,33 @@
               <img src="../figs/logo.png" alt="LLaVAShield" style="width: 48px; height: 48px; vertical-align: middle;" onerror="this.style.display='none'">
               LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models
             </h1>
+            <!-- Anthors -->
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Guolei Huang<sup>1,3*</sup>,</span>
-              <span class="author-block">Qinzhi Peng<sup>2,3*</sup>,</span>
-              <span class="author-block">Gan Xu<sup>3</sup>,</span>
-              <span class="author-block">Yuxuan Lu<sup>3†</sup>,</span>
-              <span class="author-block">Yongjun Shen<sup>1†</sup></span>
+              <span class="author-block">Guolei Huang<sup>1,5,*,§</sup>,</span>
+              <span class="author-block">Qinzhi Peng<sup>2,5,*,§</sup>,</span>
+              <span class="author-block">Gan Xu<sup>3,5,§</sup>,</span>
+              <span class="author-block">Yao Huang<sup>4,5</sup>,</span>
+              <span class="author-block">Yuxuan Lu<sup>5,†,§</sup>,</span>
+              <span class="author-block">Yongjun Shen<sup>1,†</sup></span>
             </div>
+            <!-- Organizations -->
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <sup>1</sup>Southeast University,<br>
-                <sup>2</sup>University of California, Santa Cruz,<br>
-                <sup>3</sup>RealAI
-              </span>
-              <span class="eql-cntrb">
-                <small><br><sup>*</sup>Equal contribution.</small><br>
-                <small><sup>†</sup>Corresponding author.</small>
+                <sup>1</sup>Southeast University,&nbsp;
+                <sup>2</sup>University of California, Santa Cruz,&nbsp;
+                <sup>3</sup>Zhejiang University of Technology,&nbsp;
+                <sup>4</sup>Tsinghua University,&nbsp;
+                <sup>5</sup>RealAI
               </span>
             </div>
+            <!-- Notes -->
+            <div class="is-size-6 publication-authors">
+              <span class="eql-cntrb">
+                <small><sup>*</sup>Equal contribution.</small><br>
+                <small><sup>†</sup>Corresponding authors.</small><br>
+                <small><sup>§</sup>Guolei Huang, Qinzhi Peng and Gan Xu conducted their internships at RealAI. During their internships, most of the work was completed in close collaboration with Yuxuan Lu, who served as the project lead.</small>
+              </span>
+            </div>        
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -104,12 +113,6 @@
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
-                  </a>
-                </span>
-                <!-- Checkpoints link -->
-                <span class="link-block">
-                  <a href="https://huggingface.co/leost233" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span>🤗 Checkpoints</span>
                   </a>
                 </span>
               </div>
@@ -200,7 +203,11 @@
         <img src="static/images/table_4.jpg" alt="Results on external safety benchmarks" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
         <figcaption class="has-text-centered">Table 4: Results on external safety benchmarks. MM-SafetyBench is reported using Recall. All numbers are in %.</figcaption>
       </figure>
-      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> (1) We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. The result shows high attack success rates across mainstream VLMs, underscoring that VLMs remain vulnerable to harmful inputs in multimodal multi-turn dialogues. (2) Analysis of image content and dialogue turns shows that including images increases Average Score Gain (= 0.375) and that risk tends to rise as dialogues progress.</p>
+      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> (1) We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. Results in Table 5 show consistently high Attack Success Rate (ASR), indicating substantial assistant-side vulnerability in this setting (2) Analysis of image content and dialogue turns shows that including images increases Average Score Gain (= 0.375) and that risk tends to rise as dialogues progress.</p>
+      <figure>
+        <img src="static/images/table_5.jpg" alt="ASR on the test set for different target models" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <figcaption class="has-text-centered">ASR on the test set for different target models</figcaption>
+      </figure>
       <figure>
         <img src="static/images/figure_4.jpg" alt="Analysis of components" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
         <figcaption class="has-text-centered">Analysis of components.</figcaption>
