@@ -21,6 +21,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>LLaVAShield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
 
@@ -37,6 +40,15 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif; 
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Inter', sans-serif; 
+    }
+  </style>
 </head>
 <body>
 
@@ -46,25 +58,26 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              <img src="../figs/logo.png" alt="LLaVAShield" style="width: 48px; height: 48px; vertical-align: middle;" onerror="this.style.display='none'">
+              <img src="https://raw.githubusercontent.com/leost123456/LLaVAShield/main/figs/logo.png" alt="LLaVAShield" style="width: auto; height: 72px; vertical-align: middle;" onerror="this.style.display='none'">
               LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models
             </h1>
             <!-- Authors -->
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Guolei Huang<sup>1,5,*,§</sup>,</span>
-              <span class="author-block">Qinzhi Peng<sup>2,5,*,§</sup>,</span>
-              <span class="author-block">Gan Xu<sup>3,5,§</sup>,</span>
-              <span class="author-block">Yao Huang<sup>4,5</sup>,</span>
-              <span class="author-block">Yuxuan Lu<sup>5,†,§</sup>,</span>
-              <span class="author-block">Yongjun Shen<sup>1,†</sup></span>
+              <span class="author-block"><span style="color: #06b2e1;">Guolei Huang</span><sup>1,5,*,§</sup></span>
+              <span class="author-block"><span style="color: #06b2e1;">Qinzhi Peng</span><sup>2,5,*,§</sup></span>
+              <span class="author-block"><span style="color: #06b2e1;">Gan Xu</span><sup>3,5,§</sup></span>
+              <span class="author-block"><span style="color: #06b2e1;">Yao Huang</span><sup>4,5</sup></span>
+              <span class="author-block"><span style="color: #06b2e1;">Yuxuan Lu</span><sup>5,†,§</sup></span>
+              <span class="author-block"><span style="color: #06b2e1;">Yongjun Shen</span><sup>1,†</sup></span>
             </div>
             <!-- Organizations -->
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors" style="margin-top: 0; padding-top: 0;">
               <span class="author-block">
-                <sup>1</sup>Southeast University,&nbsp;
-                <sup>2</sup>University of California, Santa Cruz,&nbsp;
-                <sup>3</sup>Zhejiang University of Technology,&nbsp;
-                <sup>4</sup>Tsinghua University,&nbsp;
+                <sup>1</sup>Southeast University&nbsp;
+                <sup>2</sup>University of California, Santa Cruz&nbsp;
+                <br>
+                <sup>3</sup>Zhejiang University of Technology&nbsp;
+                <sup>4</sup>Tsinghua University&nbsp;
                 <sup>5</sup>RealAI
               </span>
             </div>
@@ -101,7 +114,7 @@
                 <span class="link-block">
                   <a href="https://huggingface.co/RealSafe/LLaVAShield-v1.0-7B" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="fas fa-cube"></i>
+                      <span style="font-size: 1.2em;">🤗</span>
                     </span>
                     <span>Model</span>
                   </a>
@@ -147,7 +160,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              As Vision-Language Models (VLMs) move into interactive, multi-turn use, safety concerns intensify for multimodal multi-turn dialogue, which is characterized by concealment of malicious intent, contextual risk accumulation, and cross-modal joint risk. As a result, these characteristics limit the effectiveness of content moderation approaches designed for single-turn or single-modality settings. To address these limitations, we first construct the <strong>Multimodal Multi-turn Dialogue Safety (MMDS)</strong> dataset, comprising 4,484 annotated dialogues and a comprehensive risk taxonomy with 8 primary and 60 subdimensions. As part of MMDS construction, we introduce <strong>Multimodal Multi-turn Red Teaming (MMRT)</strong>, an automated framework for generating unsafe multimodal multi-turn dialogues. We further propose <strong>LLaVAShield</strong>, which audits the safety of both user inputs and assistant responses under specified policy dimensions in multimodal multi-turn dialogues. Extensive experiments show that LLaVAShield significantly outperforms state-of-the-art VLMs and existing content moderation tools while demonstrating strong generalization and flexible policy adaptation. Additionally, we analyze vulnerabilities of mainstream VLMs to harmful inputs and evaluate the contribution of key components, advancing understanding of safety mechanisms in multimodal multi-turn dialogues.
+              As Vision-Language Models (VLMs) move into interactive, multi-turn use, safety concerns intensify for multimodal multi-turn dialogue, which is characterized by concealment of malicious intent, contextual risk accumulation, and cross-modal joint risk. These characteristics limit the effectiveness of content moderation approaches designed for single-turn or single-modality settings. To address these limitations, we first construct the Multimodal <strong>Multi-turn Dialogue Safety (MMDS)</strong> dataset, comprising 4,484 annotated dialogues and a comprehensive risk taxonomy with 8 primary and 60 subdimensions. As part of MMDS construction, we introduce <strong>Multimodal Multi-turn Red Teaming (MMRT)</strong>, an automated framework for generating unsafe multimodal multi-turn dialogues. We further propose <strong>LLaVAShield</strong>, which audits the safety of both user inputs and assistant responses under specified policy dimensions in multimodal multi-turn dialogues. Extensive experiments show that LLaVAShield significantly outperforms state-of-the-art VLMs and existing content moderation tools while demonstrating strong generalization and flexible policy adaptation. Additionally, we analyze vulnerabilities of mainstream VLMs to harmful inputs and evaluate the contribution of key components, advancing understanding of safety mechanisms in multimodal multi-turn dialogues. 
             </p>
           </div>
         </div>
@@ -157,15 +170,50 @@
 
   <!-- Introduction -->
   <section class="section">
-    <div class="container is-max-desktop content">
-      <h2 class="title">Three Risk Characteristics in Multimodal Multi-Turn Dialogue</h2>
-      <p><strong>(1) Concealment of malicious intent:</strong> In multi-turn dialogues, attackers often begin with harmless openings and gradually escalate while deferring their true intent to evade detection. In multimodal settings, they further split the objective into dispersed textual and visual cues that, once linked across turns, substantially amplify harm and increase attack success rates.</p>
-      </p><strong>(2) Contextual risk accumulation:</strong> In multi-turn dialogues, risk accumulates over the interaction: attackers decompose the end goal across turns and exploit the model’s reliance on early “local compliance,” widening the attack surface and steering the assistant along the existing context.</p>
-      </p><strong>(3) Cross-modal joint risk:</strong> Multimodal multi-turn dialogues require the assistant to reason over images and text jointly; yet gaps in cross-modal safety alignment persist, making such joint risks a systemic weak point.</p>
-      <figure>
-        <img src="static/images/figure_1.jpg" alt="Example of an unsafe multimodal multi-turn dialogue" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
-        <figcaption class="has-text-centered"> Example of an unsafe multimodal multi-turn dialogue. The illustration shows three risk characteristics in multimodal multi-turn dialogue. The shade of the orange text indicates the degree of concealment and harmfulness of the user's malicious intent, while the shade of the red text indicates the risk level of the AI assistant's responses.</figcaption>
-      </figure>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 2.5rem;">Three Risk Characteristics in Multimodal Multi-Turn Dialogue</h2>
+      
+      <div class="content">
+        <!-- feature 1 -->
+        <div class="box" style="background-color: #f8f9fa; border-left: 5px solid #3273dc; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); border-radius: 4px;">
+          <h3 class="title is-5" style="margin-top: 0; margin-bottom: 0.5rem; color: #363636;">
+            <span style="color: #3273dc; margin-right: 5px;"><i class="fas fa-user-secret"></i></span>
+            (1) Concealment of malicious intent
+          </h3>
+          <p style="margin-bottom: 0; text-align: justify; line-height: 1.6;">
+            In multi-turn dialogues, attackers often begin with harmless openings and gradually escalate while deferring their true intent to evade detection. In multimodal settings, they further split the objective into dispersed textual and visual cues that, once linked across turns, substantially amplify harm and increase attack success rates.
+          </p>
+        </div>
+
+        <!-- feature 2 -->
+        <div class="box" style="background-color: #f8f9fa; border-left: 5px solid #00d1b2; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); border-radius: 4px;">
+          <h3 class="title is-5" style="margin-top: 0; margin-bottom: 0.5rem; color: #363636;">
+            <span style="color: #00d1b2; margin-right: 5px;"><i class="fas fa-layer-group"></i></span>
+            (2) Contextual risk accumulation
+          </h3>
+          <p style="margin-bottom: 0; text-align: justify; line-height: 1.6;">
+            In multi-turn dialogues, risk accumulates over the interaction: attackers decompose the end goal across turns and exploit the model’s reliance on early “local compliance,” widening the attack surface and steering the assistant along the existing context.
+          </p>
+        </div>
+
+        <!-- feature 3 -->
+        <div class="box" style="background-color: #f8f9fa; border-left: 5px solid #ffdd57; padding: 1.5rem; margin-bottom: 2.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); border-radius: 4px;">
+          <h3 class="title is-5" style="margin-top: 0; margin-bottom: 0.5rem; color: #363636;">
+            <span style="color: #ffdd57; margin-right: 5px;"><i class="fas fa-project-diagram"></i></span>
+            (3) Cross-modal joint risk
+          </h3>
+          <p style="margin-bottom: 0; text-align: justify; line-height: 1.6;">
+            Multimodal multi-turn dialogues require the assistant to reason over images and text jointly; yet gaps in cross-modal safety alignment persist, making such joint risks a systemic weak point.
+          </p>
+        </div>
+
+        <figure class="has-text-centered">
+          <img src="static/images/figure_1.jpg" alt="Example of an unsafe multimodal multi-turn dialogue" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.08);">
+          <figcaption class="is-size-6 has-text-grey" style="margin-top: 1rem; margin-left: auto; margin-right: auto; max-width: 90%; line-height: 1.5; font-style: italic;">
+            <strong>Example of an unsafe multimodal multi-turn dialogue.</strong> The illustration shows three risk characteristics in multimodal multi-turn dialogue. The shade of the orange text indicates the degree of concealment and harmfulness of the user's malicious intent, while the shade of the red text indicates the risk level of the AI assistant's responses.
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -198,35 +246,38 @@
         <figcaption class="has-text-centered">Table 3: Results on external safety benchmarks. MM-SafetyBench is reported using Recall. All numbers are in %.</figcaption>
       </figure>
       <p><strong>Performance Under Flexible Policy Adaptation.</strong> We evaluate LLaVAShield under changes to the policy configuration using 50 dialogues from the MMDS test set that both GPT-5-mini and LLaVAShield originally labeled Unsafe on the user side and the assistant side. We report false positive rate (FPR) as the primary metric; lower FPR indicates more accurate acceptance of compliant content and less excessive moderation. Results show that LLaVAShield achieves a 0% FPR on both the user and assistant sides, whereas GPT-5-mini records 30% and 34%, respectively. Overall, this demonstrates LLaVAShield’s strong performance in adapting to changing policy configurations.</p>
-      <p><strong>Rationale Ablation.</strong> We evaluate three models to assess the effect of rationales on content moderation for multimodal multi-turn dialogue, comparing removal at training or inference (w/o rationale) with the default configuration (Vanilla), which retains rationales. Results in Table 4 show limited impact on aggregate metrics. For example, under Vanilla, GPT-5-mini, and LLaVAShield show a slight increase in user-side F1 and a slight decrease in assistant-side F1.</p>
+      <!-- <p><strong>Rationale Ablation.</strong> We evaluate three models to assess the effect of rationales on content moderation for multimodal multi-turn dialogue, comparing removal at training or inference (w/o rationale) with the default configuration (Vanilla), which retains rationales. Results in Table 4 show limited impact on aggregate metrics. For example, under Vanilla, GPT-5-mini, and LLaVAShield show a slight increase in user-side F1 and a slight decrease in assistant-side F1.</p>
       <figure>
         <img src="static/images/table_4.jpg" alt="Results on external safety benchmarks" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
         <figcaption class="has-text-centered">Table 4: Results on external safety benchmarks. MM-SafetyBench is reported using Recall. All numbers are in %.</figcaption>
-      </figure>
-      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> (1) We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. Results in Table 5 show consistently high Attack Success Rate (ASR), underscoring that mainstream VLMs remain vulnerable to harmful inputs in multimodal multi-turn dialogues and supporting that the MMRT framework effectively explores attack paths that elicit unsafe responses. (2) Analysis of image content and dialogue turns shows that including images increases Average Score Gain (= 0.375) and that risk tends to rise as dialogues progress.</p>
-      <div class="columns is-variable is-5 is-multiline">
-        <div class="column is-half">
-          <figure>
+      </figure> -->
+      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> (1) We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. Results in Table 4 show consistently high Attack Success Rate (ASR), underscoring that mainstream VLMs remain vulnerable to harmful inputs in multimodal multi-turn dialogues and supporting that the MMRT framework effectively explores attack paths that elicit unsafe responses. (2) Analysis of image content and dialogue turns shows that including images increases Average Score Gain (= 0.375) and that risk tends to rise as dialogues progress. (see Figure 1)</p>
+      <div class="columns is-vcentered is-variable is-4 is-multiline" style="margin-top: 2rem; margin-bottom: 2rem;">
+  
+
+        <div class="column is-5">
+          <figure class="has-text-centered">
             <img src="static/images/table_5.jpg"
                  alt="ASR on the test set for different target models"
-                 width="100%"
-                 style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
-            <figcaption class="has-text-centered">
-              Table 5: ASR on the test set for different target models.
+                 style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #f0f2f5;">
+            <figcaption class="has-text-centered has-text-grey" style="margin-top: 1rem; font-size: 0.95rem; font-style: italic;">
+              Table 4: ASR on the test set for different target models.
             </figcaption>
           </figure>
         </div>
-        <div class="column is-half">
-          <figure>
+
+
+        <div class="column is-7">
+          <figure class="has-text-centered">
             <img src="static/images/figure_4.jpg"
                  alt="Analysis of components"
-                 width="100%"
-                 style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
-            <figcaption class="has-text-centered">
-              Analysis of components.
+                 style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #f0f2f5;">
+            <figcaption class="has-text-centered has-text-grey" style="margin-top: 1rem; font-size: 0.95rem; font-style: italic;">
+              Figure 1: Analysis of components.
             </figcaption>
           </figure>
         </div>
+        
       </div>
     </div>
   </section>
