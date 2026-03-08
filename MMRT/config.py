@@ -26,19 +26,19 @@ class Config:
 
 
 MODEL_PATHS = {
-    "InternVL3-78B": "put/your/path/here",
-    "llava-onevision-qwen2-72b-ov-chat-hf": "put/your/path/here",
+    "InternVL3-78B": "put/your/path/here", # Optionally, if the target model is InternVL3, a local path needs to be provided.
+    "llava-onevision-qwen2-72b-ov-chat-hf": "put/your/path/here", # Optionally, if the target model is LLaVA OneVision, a local path needs to be provided.
     "qwen2_5vl_72b_instruct": "put/your/path/here",
     "stable-diffusion-3.5-medium": "put/your/path/here",
 }
 
 
 DATA_PATHS = {
-    "test_data": "data/test_data.json"
+    "test_data": "data/MMRT_Data.json"
 }
 
 IMAGE_PATHS = {
-    "test_images": "data/test_images"
+    "test_images": "data/images"
 }
 
 OUTPUT_PATHS = {

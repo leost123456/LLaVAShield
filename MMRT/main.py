@@ -76,10 +76,6 @@ def build_evaluator(args):
         from models.evaluator.gpt4o_evaluator import GPT4oEvaluator
 
         return GPT4oEvaluator()
-    if args.evaluator.lower() == "qwen":
-        from models.evaluator.qwen2_5vl_instruct_evaluator import Qwen2_5VLInstructEvaluator
-
-        return Qwen2_5VLInstructEvaluator()
     
     raise NotImplementedError("Only gpt4o evaluator is implemented.")
 
