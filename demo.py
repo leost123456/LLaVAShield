@@ -3,7 +3,7 @@ from llavashield.llavashield_utils import load_shield
 model_path = 'RealSafe/LLaVAShield-v1.0-7B'
 device = 'cuda'
 device_map='auto'
-attn_implementation="flash_attention_2"
+attn_implementation="sdpa" # flash_attention_2 is highly recommended for better speed and memory efficiency.
 
 usage_policy = ['Violence & Harm', 'Hate & Harassment', 'Sexual Content', 'Self-Harm & Suicide', 'Illegal Activities', 'Deception & Misinformation', 'Privacy Violation', 'Malicious Disruption']
 
