@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llavashield"
+version = "0.1.0"
+description = "LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+train = [
+    "torch==2.5.1",
+    "torchvision==0.20.1",
+    "triton==3.1.0",
+    "transformers==4.45.0",
+    "tokenizers==0.20.3",
+    "accelerate==0.34.2",
+    "peft==0.4.0",
+    "bitsandbytes==0.46.1",
+    "safetensors==0.6.2",
+    "einops==0.8.1",
+    "qwen-vl-utils==0.0.14",
+    "deepspeed==0.15.4",
+    "ninja==1.11.1.4",
+    "ray==2.54.0",
+    "diffusers>=0.30.0",
+    "timm>=0.9.0",
+    "Pillow>=10.0.0",
+    "ftfy>=6.1.0",
+    "numpy==2.1.2",
+    "pandas==2.3.1",
+    "scipy==1.15.3",
+    "scikit-learn==1.7.1",
+    "datasets==4.0.0",
+    "huggingface-hub==0.34.4",
+    "pyarrow==21.0.0",
+    "av==16.0.1",
+    "decord==0.6.0",
+    "tqdm==4.67.1",
+    "requests==2.32.4",
+    "httpx==0.28.1",
+    "pyyaml==6.0.2",
+    "loguru==0.7.3",
+    "rich==14.1.0",
+    "wandb==0.21.1",
+    "pydantic==2.11.7",
+    "shortuuid==1.0.13",
+    "tyro==0.9.28",
+    "openai==2.3.0",
+    "gradio>=4.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/leost123456/LLaVAShield"
+"Bug Tracker" = "https://github.com/leost123456/LLaVAShield/issues"
+
+[tool.setuptools.packages.find]
+include = ["llavashield*"]
+exclude = [
+    "assets*", "docs*", "scripts*", "tests*", 
+    "checkpoints*", "dataset*", "figs*", "cache*"
+]
+
+[tool.wheel]
+exclude = [
+    "assets*", "docs*", "scripts*", "tests*", 
+    "checkpoints*", "dataset*", "figs*", "cache*"
+]
