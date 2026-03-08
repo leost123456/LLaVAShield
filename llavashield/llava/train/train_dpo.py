@@ -35,17 +35,17 @@ import torch
 import transformers
 import tokenizers
 
-from llava.constants import IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IMAGE_TOKEN_INDEX
+from ..constants import IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IMAGE_TOKEN_INDEX
 from torch.utils.data import Dataset
-from llava.train.llava_trainer import LLaVADPOTrainer
+from ..train.llava_trainer import LLaVADPOTrainer
 from data_processing.utils import load_jsonl, load_json
 from llava import conversation as conversation_lib
-from llava.model import *
-from llava.model.language_model.llava_qwen import LlavaQwenConfig
-from llava.model.language_model.llava_llama import LlavaConfig
-from llava.model.language_model.llava_mistral import LlavaMistralConfig
-from llava.mm_utils import process_highres_image, process_anyres_image, process_highres_image_crop_split, tokenizer_image_token
-from llava.utils import rank0_print
+from ..model import *
+from ..model.language_model.llava_qwen import LlavaQwenConfig
+from ..model.language_model.llava_llama import LlavaConfig
+from ..model.language_model.llava_mistral import LlavaMistralConfig
+from ..mm_utils import process_highres_image, process_anyres_image, process_highres_image_crop_split, tokenizer_image_token
+from ..utils import rank0_print
 from transformers import AutoConfig
 import pickle
 

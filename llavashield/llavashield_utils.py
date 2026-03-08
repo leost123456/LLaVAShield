@@ -5,14 +5,14 @@ import requests
 import base64
 from PIL import Image
 
-from llava.constants import IMAGE_TOKEN_INDEX
-from llava.conversation import conv_templates
-from llava.model.builder import load_models
-from llava.utils import disable_torch_init
-from llava.mm_utils import tokenizer_image_token
+from .llava.constants import IMAGE_TOKEN_INDEX
+from .llava.conversation import conv_templates
+from .llava.model.builder import load_models
+from .llava.utils import disable_torch_init
+from .llava.mm_utils import tokenizer_image_token
 
-from utils.prompt_template import llava_prefix_prompt, llava_task_prompt, llava_note_prompt, llava_input_parameter_prompt, llava_output_format_prompt, llava_dialogue_history_prompt
-from utils.policy import policy_prompt_construct, usage_policy_prompt
+from .utils.prompt_template import llava_prefix_prompt, llava_task_prompt, llava_note_prompt, llava_input_parameter_prompt, llava_output_format_prompt, llava_dialogue_history_prompt
+from .utils.policy import policy_prompt_construct, usage_policy_prompt
 
 class LlavaShieldProcessor:
     """

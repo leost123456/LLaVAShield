@@ -40,21 +40,21 @@ import deepspeed
 
 from transformers import AutoConfig
 from torch.utils.data import Dataset
-from llava.constants import IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IMAGE_TOKEN_INDEX
-from llava.train.llava_trainer import LLaVATrainer
-from llava.train.llava_shield_trainer import LLaVAShieldTrainer
+from ..constants import IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IMAGE_TOKEN_INDEX
+from ..train.llava_trainer import LLaVATrainer
+from ..train.llava_shield_trainer import LLaVAShieldTrainer
 
 from llava import conversation as conversation_lib
-from llava.model import *
-from llava.mm_utils import process_highres_image, process_anyres_image, process_highres_image_crop_split, tokenizer_image_token
-from llava.utils import rank0_print, process_video_with_pyav, process_video_with_decord
+from ..model import *
+from ..mm_utils import process_highres_image, process_anyres_image, process_highres_image_crop_split, tokenizer_image_token
+from ..utils import rank0_print, process_video_with_pyav, process_video_with_decord
 
-from llava.model.language_model.llava_mixtral import LlavaMixtralForCausalLM
-from llava.model.language_model.llava_mistral import LlavaMistralForCausalLM
-from llava.model.language_model.llava_llama import LlavaLlamaForCausalLM
-from llava.model.language_model.llava_qwen_moe import LlavaQwenMoeForCausalLM
-from llava.model.language_model.llava_qwen import LlavaQwenForCausalLM
-from llava.model.language_model.llava_gemma import LlavaGemmaForCausalLM
+from ..model.language_model.llava_mixtral import LlavaMixtralForCausalLM
+from ..model.language_model.llava_mistral import LlavaMistralForCausalLM
+from ..model.language_model.llava_llama import LlavaLlamaForCausalLM
+from ..model.language_model.llava_qwen_moe import LlavaQwenMoeForCausalLM
+from ..model.language_model.llava_qwen import LlavaQwenForCausalLM
+from ..model.language_model.llava_gemma import LlavaGemmaForCausalLM
 import warnings
 from scripts import merge_lora
 

@@ -28,7 +28,7 @@ if is_accelerate_available():
 if is_datasets_available():
     import datasets
 
-from llava.utils import rank0_print
+from ..utils import rank0_print
 
 
 def maybe_zero_3(param, ignore_status=False, name=None):
