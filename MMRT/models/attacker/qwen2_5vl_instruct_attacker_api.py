@@ -6,13 +6,13 @@ import time
 import openai
 from typing import Dict, List, Any
 
-from config import Config
-from prompts.attack_prompt import ATTACK_SYSTEM_PROMPT
+from ...config import Config
+from ...prompts.attack_prompt import ATTACK_SYSTEM_PROMPT
 
-from models.attacker.base_attacker import AttackerModel
+from .base_attacker import AttackerModel
 
-from utils.utils import check_response_refused, to_data_url
-from utils.logger import get_logger
+from ...utils.utils import check_response_refused, to_data_url
+from ...utils.logger import get_logger
 
 logger = get_logger(__name__)  
 
@@ -275,7 +275,7 @@ class Qwen2_5VLInstructAttacker(AttackerModel):
         
         try:
             if self.sd3_pool is None:
-                from models.attacker.image_generator.SD3_medium_generate import SD3_medium_generate
+                from .image_generator.SD3_medium_generate import SD3_medium_generate
                 SD3_medium_generate(prompt, save_path)
             else:
                 ref = self.sd3_pool.submit(prompt, save_path)

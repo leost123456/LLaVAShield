@@ -7,13 +7,13 @@ import httpx
 import openai
 from openai import APIConnectionError
 
-from config import Config
-from prompts.evaluate_prompt import EVALUATE_SYSTEM_PROMPT
+from ...config import Config
+from ...prompts.evaluate_prompt import EVALUATE_SYSTEM_PROMPT
 
-from models.evaluator.base_evaluator import EvaluatorModel
+from .base_evaluator import EvaluatorModel
 
-from utils.utils import check_response_refused
-from utils.logger import get_logger
+from ...utils.utils import check_response_refused
+from ...utils.logger import get_logger
 
 logger = get_logger(__name__)  
 def _normalize_history(history):

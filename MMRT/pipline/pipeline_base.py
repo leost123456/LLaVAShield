@@ -1,10 +1,10 @@
-from config import Config
+from ..config import Config
 
-from data.data_loader import load_dataset
-from utils.utils import check_response_refused, save_task_json, is_task_completed, is_task_score5
-from utils.logger import get_logger
-from utils.timer import Timer
-from utils.time_limit import TimeLimit
+from ..data.data_loader import load_dataset
+from ..utils.utils import check_response_refused, save_task_json, is_task_completed, is_task_score5
+from ..utils.logger import get_logger
+from ..utils.timer import Timer
+from ..utils.time_limit import TimeLimit
 
 logger = get_logger(__name__) 
 timer = Timer(logger)
@@ -139,10 +139,10 @@ def run_base(
 
         if score == 5:
             logger.info("DONE! Found score=5 path.")
-            save_task_json(output, f"{task_info["task_id"]}.json")
+            save_task_json(output, f"{task_info['task_id']}.json")
         else:
             logger.info(f"FAILED. Found score={score} path.")
-            save_task_json(output, f"{task_info["task_id"]}_score{score}.json")
+            save_task_json(output, f"{task_info['task_id']}_score{score}.json")
 
         if time_limit.expired():
                 break

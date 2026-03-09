@@ -2,13 +2,13 @@ from multiprocessing import Pool
 from tqdm import tqdm
 import os
 
-from data.data_loader import load_dataset
-from config import Config
-from mcts.mcts import MCTS
-from utils.utils import  save_task_json, is_task_completed, is_task_score5, reset_generated_images
+from ..data.data_loader import load_dataset
+from ..config import Config
+from ..mcts.mcts import MCTS
+from ..utils.utils import  save_task_json, is_task_completed, is_task_score5, reset_generated_images
 
-from utils.logger import get_logger
-from utils.timer import Timer
+from ..utils.logger import get_logger
+from ..utils.timer import Timer
 
 
 logger = get_logger(__name__) 
@@ -73,11 +73,11 @@ def run(
 
         if best_path and final_score == 5:
             logger.info("MCTS DONE! Found score=5 path.")
-            save_task_json(output, f"{task_info["task_id"]}.json")
+            save_task_json(output, f"{task_info['task_id']}.json")
         else:
 
             logger.info(f"MCTS FAILED. Found score={final_score} path.")
-            save_task_json(output, f"{task_info["task_id"]}_score{final_score}.json")
+            save_task_json(output, f"{task_info['task_id']}_score{final_score}.json")
 
 
         mcts.visualize_path(best_path)

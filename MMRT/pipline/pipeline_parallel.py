@@ -1,13 +1,13 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from config import Config
-from data.data_loader import load_dataset
+from ..config import Config
+from ..data.data_loader import load_dataset
 
-from mcts.mcts import MCTS
+from ..mcts.mcts import MCTS
 
-from utils.utils import save_task_json, is_task_score5, is_task_completed, reset_generated_images
-from utils.logger import get_logger
-from utils.timer import Timer
+from ..utils.utils import save_task_json, is_task_score5, is_task_completed, reset_generated_images
+from ..utils.logger import get_logger
+from ..utils.timer import Timer
 
 logger = get_logger(__name__) 
 timer = Timer(logger)
@@ -55,11 +55,11 @@ def _run_one_task(item, attacker, target, evaluator, max_refused, max_rounds, si
         
     if best_path and final_score == 5:
         logger.info("MCTS DONE! Found score=5 path.")
-        save_task_json(output, f"{task_info["task_id"]}.json")
+        save_task_json(output, f"{task_info['task_id']}.json")
         success_flag = True
     else:
         logger.info(f"MCTS FAILED. Found score={final_score} path.")
-        save_task_json(output, f"{task_info["task_id"]}_score{final_score}.json")
+        save_task_json(output, f"{task_info['task_id']}_score{final_score}.json")
         success_flag = False
 
 

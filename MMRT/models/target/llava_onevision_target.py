@@ -3,11 +3,11 @@ import torch
 from PIL import Image
 from transformers import AutoProcessor, LlavaOnevisionForConditionalGeneration
 
-from config import Config
-from models.target.base_target import TargetModel
+from ...config import Config
+from .base_target import TargetModel
 
-from utils.utils import check_response_refused, to_data_url
-from utils.logger import get_logger
+from ...utils.utils import check_response_refused, to_data_url
+from ...utils.logger import get_logger
 
 logger = get_logger(__name__)  
 

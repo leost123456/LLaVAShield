@@ -3,11 +3,11 @@ import os
 import torch
 from transformers import AutoModel, AutoTokenizer
 
-from config import Config
-from models.target.base_target import TargetModel
-from utils.intern_vl_utils import load_image
+from ...config import Config
+from .base_target import TargetModel
+from ...utils.intern_vl_utils import load_image
 
-from utils.logger import get_logger
+from ...utils.logger import get_logger
 logger = get_logger(__name__)  
 
 class InternVL3Target(TargetModel):

@@ -1,13 +1,16 @@
 ## MMRT: Multimodal Multi-turn Red Teaming
 
-This repository contains the official implementation of **MMRT**, a multimodal multi-turn red-teaming framework for efficiently generating unsafe multimodal multi-turn dialogues tageting multiple VLMs. The framework combines:
+**MMRT** is a multimodal multi-turn red-teaming framework for efficiently generating unsafe multimodal multi-turn dialogues tageting multiple VLMs. The framework combines:
 
 - **Attackers** that generate adversarial multimodal multi-turn conversations
 - **Targets** that respond to the attacks, which is the models you want to evaluate
 - **Evaluators** that score the safety of target responses
 - **MCTS-based search** that adaptively explores attack path over multiple dialogue turns
 
-## MMRT Structure
+
+---
+
+## Structure
 
 - **`main.py`**: Entry point. Parses command-line arguments, initializes `Config`, and runs:
   - **MCTS-based attack** (`pipline/pipeline.py`)

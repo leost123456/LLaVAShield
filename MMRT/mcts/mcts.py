@@ -1,11 +1,11 @@
 import os
 from copy import deepcopy
 
-from mcts.node import MCTSNode
-from utils.utils import check_response_refused
+from ..mcts.node import MCTSNode
+from ..utils.utils import check_response_refused
 
-from utils.logger import get_logger
-from utils.time_limit import TimeLimit
+from ..utils.logger import get_logger
+from ..utils.time_limit import TimeLimit
 
 logger = get_logger(__name__)  
 

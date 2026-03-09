@@ -2,7 +2,7 @@ import logging
 import os
 
 from datetime import datetime
-from config import Config
+from ..config import Config
 
 log_dir = Config.output_dir
 os.makedirs(log_dir, exist_ok=True)

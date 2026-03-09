@@ -3,7 +3,7 @@ import gc
 import torch
 from diffusers import StableDiffusion3Pipeline
 
-from config import MODEL_PATHS
+from ....config import MODEL_PATHS
 
 _SD3_PIPE = None  
 

@@ -6,7 +6,7 @@ import os
 import shutil
 import glob
 
-from config import Config
+from ..config import Config
 
 def is_task_completed(task_id: int, output_dir: str | None = None, score_threshold: int = 4) -> bool:
     if not output_dir:

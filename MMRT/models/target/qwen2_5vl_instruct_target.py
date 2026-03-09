@@ -3,11 +3,11 @@ import torch
 from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 from qwen_vl_utils import process_vision_info
 
-from config import Config
-from models.target.base_target import TargetModel
-from utils.logger import get_logger
+from ...config import Config
+from .base_target import TargetModel
+from ...utils.logger import get_logger
 
-from utils.logger import get_logger
+from ...utils.logger import get_logger
 
 logger = get_logger(__name__)  
 

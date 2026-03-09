@@ -34,11 +34,11 @@ MODEL_PATHS = {
 
 
 DATA_PATHS = {
-    "test_data": "data/MMRT_Data.json"
+    "test_data": "MMRT/data/MMRT_Data.json"
 }
 
 IMAGE_PATHS = {
-    "test_images": "data/images"
+    "test_images": "MMRT/data/images"
 }
 
 OUTPUT_PATHS = {
