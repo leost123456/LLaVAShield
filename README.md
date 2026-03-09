@@ -110,8 +110,8 @@ data/images/
 
 **2.3 Configuration:**
 Update the paths in `config.py` to point to your data:
-- `DATA_PATHS["test_data"] = "data/MMRT_Data.json"`
-- `IMAGE_PATHS["test_images"] = "data/images"`
+- `DATA_PATHS["test_data"] = "MMRT/data/MMRT_Data.json"`
+- `IMAGE_PATHS["test_images"] = "MMRT/data/images"`
 
 ### 3. Usage & Execution
 
