@@ -222,6 +222,6 @@ If you find our work helpful, please consider citing our paper and leaving a sta
 
 ---
 
-## ⭐ Star History
+## ⭐ Star
 
 [![Star History Chart](https://api.star-history.com/svg?repos=leost123456/LLaVAShield&type=Date)](https://star-history.com/#leost123456/LLaVAShield&Date)
