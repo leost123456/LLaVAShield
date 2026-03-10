@@ -9,13 +9,11 @@
   <meta property="og:title" content="LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models">
   <meta property="og:description" content="LLaVAShield audits the safety of both user inputs and assistant responses under specified policy dimensions in multimodal multi-turn dialogues. CVPR 2026.">
   <meta property="og:url" content="https://github.com/leost123456/LLaVAShield">
-  <meta property="og:image" content="static/images/carousel1.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:title" content="LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in VLMs">
   <meta name="twitter:description" content="Content moderation for multimodal multi-turn dialogue. MMDS dataset, MMRT framework, LLaVAShield model. CVPR 2026.">
-  <meta name="twitter:image" content="static/images/carousel1.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords" content="LLaVAShield, vision-language models, multimodal multi-turn dialogue, MMDS, MMRT">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -231,7 +229,7 @@
   <section class="section">
     <div class="container is-max-desktop content">
       <h2 class="title">Results</h2>
-      <p><strong>Main Result.</strong> (1) Advanced VLMs and content moderation tools struggle with composite safety risks in multimodal multi-turn dialogue. Results (see Table 1) on the MMDS test set show that both open- and closed-source models perform poorly when harmful cases combine concealment of malicious intent, contextual risk accumulation, and cross-modal joint risk. (2) LLaVAShield sets a new SOTA for content moderation in multimodal multi-turn dialogue. On the MMDS test set (see Table 1), LLaVAShield attains F1 95.71% on the user side and F1 92.24% on the assistant side. (3) LLaVAShield’s advantage holds at fine-grained policy dimensions. To further analyze model performance, we conduct a fine-grained policy-dimension analysis (see Table 2). We find that the performance advantage is not due to memorizing specific risks but reflects consistent understanding across diverse scenarios. Compared with GPT-5-mini, LLaVAShield achieves higher F1 on nearly all dimensions, with large margins on O2 (+39.11% user side) and O4 (+40.04% user side), which require complex context and cross-modal reasoning.</p>
+      <p><strong>Main Result.</strong> (1) Advanced VLMs and content moderation tools struggle with composite safety risks in multimodal multi-turn dialogue. Results in Table 1 show that both open- and closed-source models perform poorly when harmful cases combine concealment of malicious intent, contextual risk accumulation, and cross-modal joint risk. (2) LLaVAShield sets a new SOTA for content moderation in multimodal multi-turn dialogue. On the MMDS test set, LLaVAShield attains F1 95.71% on the user side and F1 92.24% on the assistant side. (3) LLaVAShield’s advantage holds at fine-grained policy dimensions. To further analyze model performance, we conduct a fine-grained policy-dimension analysis in Table 2. We find that the performance advantage is not due to memorizing specific risks but reflects consistent understanding across diverse scenarios. Compared with GPT-5-mini, LLaVAShield achieves higher F1 on nearly all dimensions, with large margins on O2 (+39.11% user side) and O4 (+40.04% user side), which require complex context and cross-modal reasoning.</p>
       <figure style="margin-bottom: 3rem;">
         <img src="static/images/table_1.jpg" alt="MMDS Test Set Results" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
         <figcaption class="has-text-centered">Table 1: MMDS test set results. The best and second-best results are in bold and underlined.</figcaption>
@@ -251,7 +249,7 @@
         <img src="static/images/table_4.jpg" alt="Results on external safety benchmarks" width="100%" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
         <figcaption class="has-text-centered">Table 4: Results on external safety benchmarks. MM-SafetyBench is reported using Recall. All numbers are in %.</figcaption>
       </figure> -->
-      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> (1) We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. Results in Table 4 show consistently high Attack Success Rate (ASR), underscoring that mainstream VLMs remain vulnerable to harmful inputs in multimodal multi-turn dialogues and supporting that the MMRT framework effectively explores attack paths that elicit unsafe responses. (2) Analysis of image content and dialogue turns shows that including images increases Average Score Gain (= 0.375) and that VLMs become more likely to produce harmful content as dialogues progress (see Figure 1). </p>
+      <p><strong>VLM Vulnerabilities and Analysis of Component Contribution.</strong> We evaluate the seven mainstream VLMs using the MMRT framework on 60 malicious intents, where each task corresponds to a sub-dimension of our safety taxonomy. Results in Table 4 show consistently high Attack Success Rate (ASR), underscoring that mainstream VLMs remain vulnerable to harmful inputs in multimodal multi-turn dialogues and supporting that the MMRT framework effectively explores attack paths that elicit unsafe responses. We further analyze how images and dialogue turns affect risk. including images increases Average Score Gain by 0.375 and that VLMs become more likely to produce harmful content as dialogues progress, as shown in Figure 1. </p>
       <div class="columns is-vcentered is-variable is-4 is-multiline" style="margin-top: 2rem; margin-bottom: 2rem;">
 
         <div class="column is-5">
