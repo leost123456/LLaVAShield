@@ -212,7 +212,7 @@ If you find our work helpful, please consider citing our paper and leaving a sta
 ```bibtex
 @misc{huang2025llavashield,
       title={LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models}, 
-      author={Guolei Huang and Qinzhi Peng and Gan Xu and Yuxuan Lu and Yongjun Shen},
+      author={Guolei Huang and Qinzhi Peng and Gan Xu and Yao Huang and Yuxuan Lu and Yongjun Shen},
       year={2025},
       eprint={2509.25896},
       archivePrefix={arXiv},
