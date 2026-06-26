@@ -210,14 +210,12 @@ Please ensure you manually install the **flash-attn** package before starting th
 If you find our work helpful, please consider citing our paper and leaving a star on this repository! 🌟
 
 ```bibtex
-@misc{huang2026llavashieldsafeguardingmultimodalmultiturn,
-      title={LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models}, 
-      author={Guolei Huang and Qinzhi Peng and Gan Xu and Yao Huang and Yuxuan Lu and Yongjun Shen},
-      year={2026},
-      eprint={2509.25896},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2509.25896}, 
+@inproceedings{huang2026llavashield,
+  title={Llavashield: Safeguarding multimodal multi-turn dialogues in vision-language models},
+  author={Huang, Guolei and Peng, Qinzhi and Xu, Gan and Huang, Yao and Lu, Yuxuan and Shen, Yongjun},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={30130--30140},
+  year={2026}
 }
 ```
 
